@@ -25,6 +25,10 @@ bool GameScene::init() {
     if (!Layer::init()) {
         return false;
     }
-    BackgroudManager::getInstance()->addGameEntity(this);
+    BackgroundManager::getInstance()->addGameEntity(this);
+    schedule([this](float delay){
+        BackgroundManager::getInstance()->update(delay,this);
+    }, "gameRun");
+    
     return true;
 }

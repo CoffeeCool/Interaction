@@ -10,6 +10,8 @@
 		1D4DEDC11B6B609000E9E7F9 /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D4DEDBF1B6B609000E9E7F9 /* AppDelegate.cpp */; };
 		1D4DEDC41B6B609B00E9E7F9 /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D4DEDC21B6B609B00E9E7F9 /* HelloWorldScene.cpp */; };
 		1D4DEDC81B6B61F500E9E7F9 /* BackgroudManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D4DEDC61B6B61F500E9E7F9 /* BackgroudManager.cpp */; };
+		1D5F5E151B70584D006DD5CA /* MapEntity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D5F5E131B70584D006DD5CA /* MapEntity.cpp */; };
+		1D5F5E171B706160006DD5CA /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D5F5E161B706160006DD5CA /* GameKit.framework */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DD3EEBE1B6F1A2B00BE7927 /* HeroDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DD3EEBC1B6F1A2B00BE7927 /* HeroDisplay.cpp */; };
 		1DD3EEC11B6F748300BE7927 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DD3EEBF1B6F748300BE7927 /* GameScene.cpp */; };
@@ -72,6 +74,9 @@
 		1D4DEDC31B6B609B00E9E7F9 /* HelloWorldScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelloWorldScene.h; sourceTree = "<group>"; };
 		1D4DEDC61B6B61F500E9E7F9 /* BackgroudManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BackgroudManager.cpp; sourceTree = "<group>"; };
 		1D4DEDC71B6B61F500E9E7F9 /* BackgroudManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroudManager.h; sourceTree = "<group>"; };
+		1D5F5E131B70584D006DD5CA /* MapEntity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MapEntity.cpp; sourceTree = "<group>"; };
+		1D5F5E141B70584D006DD5CA /* MapEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapEntity.h; sourceTree = "<group>"; };
+		1D5F5E161B706160006DD5CA /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		1D6058910D05DD3D006BFB54 /* Interaction iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Interaction iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DD3EEBC1B6F1A2B00BE7927 /* HeroDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HeroDisplay.cpp; sourceTree = "<group>"; };
 		1DD3EEBD1B6F1A2B00BE7927 /* HeroDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeroDisplay.h; sourceTree = "<group>"; };
@@ -136,6 +141,7 @@
 				D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				1D5F5E171B706160006DD5CA /* GameKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */,
 				BF1712471292920000B8313A /* libz.dylib in Frameworks */,
@@ -221,6 +227,8 @@
 		1D4DEDBD1B6B607700E9E7F9 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
+				1D5F5E131B70584D006DD5CA /* MapEntity.cpp */,
+				1D5F5E141B70584D006DD5CA /* MapEntity.h */,
 			);
 			path = Maps;
 			sourceTree = "<group>";
@@ -263,6 +271,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1D5F5E161B706160006DD5CA /* GameKit.framework */,
 				8262943D1AAF051F00CB7CF7 /* Security.framework */,
 				52B47A461A53D09B004E4C60 /* Security.framework */,
 				D6B0611A1803AB670077942B /* CoreMotion.framework */,
@@ -408,7 +417,12 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = MDDB52YB8L;
+						DevelopmentTeam = 5FW2Y8DVGL;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -479,6 +493,7 @@
 				1D4DEDC41B6B609B00E9E7F9 /* HelloWorldScene.cpp in Sources */,
 				1D4DEDC11B6B609000E9E7F9 /* AppDelegate.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				1D5F5E151B70584D006DD5CA /* MapEntity.cpp in Sources */,
 				1D4DEDC81B6B61F500E9E7F9 /* BackgroudManager.cpp in Sources */,
 				1DD3EEBE1B6F1A2B00BE7927 /* HeroDisplay.cpp in Sources */,
 				1DD3EEC11B6F748300BE7927 /* GameScene.cpp in Sources */,
@@ -502,6 +517,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
@@ -526,6 +542,7 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
@@ -538,6 +555,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -560,6 +578,7 @@
 					"$(_COCOS_LIB_IOS_BEGIN)",
 					"$(_COCOS_LIB_IOS_END)",
 				);
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";

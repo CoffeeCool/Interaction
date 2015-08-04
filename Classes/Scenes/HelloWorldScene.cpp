@@ -27,7 +27,7 @@ bool HelloWorld::init()
     {
         return false;
     }
-    BackgroudManager::getInstance()->addStartEntity(this);
+    BackgroundManager::getInstance()->addStartEntity(this);
     
     return true;
 }

@@ -10,26 +10,22 @@
 #define __Interaction__HeroDisplay__
 
 #include "cocos2d.h"
+#include "DefaultSettings.h"
 USING_NS_CC;
-enum HeroDisplayType{
-    green = 0,
-    stone = 1,
-    purple = 2,
-    yellow = 3
-};
+
 
 class HeroDisplay : public cocos2d::Sprite{
 private:
     float m_scale;
-    CC_SYNTHESIZE(HeroDisplayType, m_displayType, DisplayType);
+    CC_SYNTHESIZE(int, m_displayType, DisplayType);
     CC_SYNTHESIZE(int, m_speedX, SpeedX);
     CC_SYNTHESIZE(int, m_speedY, SpeedY);
     CC_SYNTHESIZE(int, m_angel, Angel);
-    virtual bool init(HeroDisplayType displayType);
+    virtual bool init(int displayType);
     virtual void update(float delay);
     
 public:
-    static HeroDisplay* create(HeroDisplayType displayType);
+    static HeroDisplay* create(int displayType);
     
 };
 
